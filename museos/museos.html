@@ -79,9 +79,8 @@
 					$('#map_canvas').gmap({'disableDefaultUI':true, 'callback': function() {
 						var self = this;
 						$.getJSON( 'http://merunga.github.com/hacklima/museos/json/museos.json', function(data) {
-							console.log(marker.title)
 							$.each( data.markers, function(i, marker) {
-								alert(marker.title)
+								console.log(marker.title)
 								self.addMarker({ 'position': new google.maps.LatLng(marker.latitude, marker.longitude), 'bounds':true } ).click(function() {
 									self.openInfoWindow({ 'content': marker.content }, this);
 								});
