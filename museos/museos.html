@@ -80,6 +80,7 @@
 						var self = this;
 						$.getJSON( 'http://merunga.github.com/hacklima/museos/json/museos.json', function(data) { 
 							$.each( data.markers, function(i, marker) {
+								alert(marker.title)
 								self.addMarker({ 'position': new google.maps.LatLng(marker.latitude, marker.longitude), 'bounds':true } ).click(function() {
 									self.openInfoWindow({ 'content': marker.content }, this);
 								});
